@@ -1,0 +1,59 @@
+{
+	"name": "XCoordinate implements Coordinate",
+
+	"description": "This is an implementation of Coordinate, meant to provide a specific type for an x coordinate (the first coordinate in a triplet)",
+
+	"constants": [],
+
+	"instanceVariables": [],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "XCoordinate()",
+					"arguments": [
+						{
+							"name": "value",
+							"type": "int"
+						}
+					],
+					"returnType": "XCoordinate",
+					"access": "Public",
+					"description": "Constructs an XCoordinate given its integer value"
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": []
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": []
+
+		},
+
+		{
+			"category": "Static",
+			"methods": []
+
+		},
+
+		{
+			"category": "Other",
+			"methods": []
+
+		}
+
+	]
+
+}

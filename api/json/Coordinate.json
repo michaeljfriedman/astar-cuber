@@ -1,0 +1,62 @@
+{
+	"name": "Coordinate",
+
+	"description": "A Coordinate is an interface for an integer-valued coordinate. Implementations of the coordinate can be used for stricter typing of coordinates (e.g. x, y, and z coordinates, separately), as opposed to using one type (e.g. int) for all coordinates.",
+
+	"constants": [],
+
+	"instanceVariables": [
+
+		{
+			"name": "value",
+			"type": "int",
+			"description": "The integer value of this Coordinate"
+		}
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": []
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				{
+					"name": "value()",
+					"arguments": [],
+					"returnType": "int",
+					"access": "Public",
+					"description": "Returns this instance's integer value"
+				}
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": []
+
+		},
+
+		{
+			"category": "Static",
+			"methods": []
+
+		},
+
+		{
+			"category": "Other",
+			"methods": []
+
+		}
+
+	]
+
+}

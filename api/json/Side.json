@@ -1,0 +1,158 @@
+{
+	"name": "Side implements Iterable(Cublet)",
+
+	"description": "A Side represents one side of the cube - the 9 pieces of a single face. It supports an operation for turning and iterating over all Cublets in clockwise order",
+
+	"constants": [
+
+		
+
+	],
+
+	"instanceVariables": [
+
+		{
+			"name": "cublets",
+			"type": "Cublet[]",
+			"description": "The array of Cublets that make up the side, in clockwise order starting from the top-left Cublet of the side."
+		},
+
+		{
+			"name": "plane",
+			"type": "Coordinate",
+			"description": "The XCoordinate, YCoordinate, or ZCoordinate representing the plane in which this side lives"
+		}
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "Side()",
+					"arguments": [
+						{
+							"name": "plane",
+							"type": "Coordinate",
+							"description": "The XCoordinate, YCoordinate, or ZCoordinate representing the plane in which this side lives"
+						},
+
+						{
+							"name": "cube",
+							"type": "Cube",
+							"description": "The Cube from which to extract the side"
+						}
+					],
+					"returnType": "Side",
+					"access": "Public",
+					"description": "Constructs a Side"
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				{
+					"name": "getPlane()",
+					"arguments": [],
+					"returnType": "Coordinate",
+					"access": "Public",
+					"description": "Returns Coordinate representing the plane in which this Side lives"
+				}
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Overriden from Iterable",
+			"methods": [
+
+				{
+					"name": "iterator()",
+					"arguments": [],
+					"returnType": "Iterator<Cublet>",
+					"access": "Public",
+					"description": "Returns an Iterator over all the Cublets of this Side in clockwise order, starting from the top-left"
+				}
+
+			]
+		},
+
+		{
+			"category": "Private Helper Methods",
+			"methods": [
+
+				{
+					"name": "permuteClockwise()",
+					"arguments": [],
+					"returnType": "Side",
+					"access": "Private",
+					"description": "Returns a new Side that permutes all the Cublets of this side one turn clockwise"
+				},
+
+				{
+					"name": "orientClockwise()",
+					"arguments": [],
+					"returnType": "Side",
+					"access": "Private",
+					"description": "Returns a new Side that orients the Corners and Edges appropriately when making a clockwise turn of this Side"
+				}
+
+			]
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				{
+					"name": "turnClockwise()",
+					"arguments": [],
+					"returnType": "Side",
+					"access": "Public",
+					"description": "Returns a new Side representing this Side turned once clockwise"
+				},
+
+				{
+					"name": "toString()",
+					"arguments": [],
+					"returnType": "Strng",
+					"access": "Public",
+					"description": "Returns a String representation of this Side"
+				}
+				
+			]
+
+		}
+
+	]
+
+}

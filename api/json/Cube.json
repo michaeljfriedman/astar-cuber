@@ -1,0 +1,292 @@
+{
+	"name": "Cube",
+
+	"description": "This object is a model for the Rubik's Cube. It supports operations for retrieving cublets, turning sides, and determining whether or not the cube is solved.",
+
+	"constants": [
+
+		{
+			"name": "B",
+			"type": "XCoordinate",
+			"description": "The XCoordinate representing the plane of the back (B) side of the cube"
+		},
+
+		{
+			"name": "F",
+			"type": "XCoordinate",
+			"description": "The XCoordinate representing the plane of the front (F) side of the cube"
+		},
+
+		{
+			"name": "L",
+			"type": "YCoordinate",
+			"description": "The YCoordinate representing the plane of the left (L) side of the cube"
+		},
+
+		{
+			"name": "R",
+			"type": "YCoordinate",
+			"description": "The YCoordinate representing the plane of the right (R) side of the cube"
+		},
+
+		{
+			"name": "D",
+			"type": "ZCoordinate",
+			"description": "The ZCoordinate representing the plane of the down (D) side of the cube"
+		},
+
+		{
+			"name": "U",
+			"type": "ZCoordinate",
+			"description": "The ZCoordinate representing the plane of the up (U) side of the cube"
+		},
+
+		{
+			"name": "EDGE",
+			"type": "Coordinate",
+			"description": "Since standard cube notation only uses two coordinates to identify edges, this constant is the default value of the un-specified coordinate of an edge's location"
+		}
+
+	],
+
+	"instanceVariables": [
+
+		{
+			"name": "cublets",
+			"type": "Cublet[][][]",
+			"description": "The 3D array of Cublets that make up the Cube"
+		}
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "Cube()",
+					"arguments": [
+						{
+							"name": "filename",
+							"type": "String"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Constructs a Cube from a file"
+				},
+
+				{
+					"name": "Cube()",
+					"arguments": [
+						{
+							"name": "cube",
+							"type": "Cube"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Constructs a copy of the given Cube"
+				},
+
+				{
+					"name": "Cube()",
+					"arguments": [],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Constructs a solved Cube"
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				{
+					"name": "getCublet()",
+					"arguments": [
+						{
+							"name": "x",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "y",
+							"type": "YCoordinate"
+						},
+
+						{
+							"name": "z",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "Cublet",
+					"access": "Public",
+					"description": "Returns the Cublet at the location (x, y, z). Can be any of the 3 types of Cublets"
+				},
+
+				{
+					"name": "getCorner()",
+					"arguments": [
+						{
+							"name": "x",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "y",
+							"type": "YCoordinate"
+						},
+
+						{
+							"name": "z",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "Corner",
+					"access": "Public",
+					"description": "Returns the Corner at the location (x, y, z)"
+				},
+
+				{
+					"name": "getEdge()",
+					"arguments": [
+						{
+							"name": "x",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "y",
+							"type": "YCoordinate"
+						}
+					],
+					"returnType": "Edge",
+					"access": "Public",
+					"description": "Returns the Edge at the x, y Coordinates given, using the default EDGE Coordinate for the z Coordinate"
+				},
+
+				{
+					"name": "getEdge()",
+					"arguments": [
+						{
+							"name": "y",
+							"type": "YCoordinate"
+						},
+
+						{
+							"name": "z",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "Edge",
+					"access": "Public",
+					"description": "Returns the Edge at the y, z Coordinates given, using the default EDGE Coordinate for the x Coordinate"
+				},
+
+				{
+					"name": "getEdge()",
+					"arguments": [
+						{
+							"name": "x",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "z",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "Edge",
+					"access": "Public",
+					"description": "Returns the Edge at the x, z Coordinates given, using the default EDGE Coordinate for the y Coordinate"
+				}
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Private Helper Methods",
+			"methods": [
+
+				{
+					"name": "apply()",
+					"arguments": [
+						{
+							"name": "side",
+							"type": "Side"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Private",
+					"description": "Returns a new Cube replacing the corresponding side with the one provided"
+				}
+
+			]
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				{
+					"name": "isSolved()",
+					"arguments": [],
+					"returnType": "boolean",
+					"access": "Public",
+					"description": "Returns whether or not this Cube is solved"
+				},
+
+				{
+					"name": "turnClockwise()",
+					"arguments": [
+						{
+							"name": "plane",
+							"type": "Coordinate"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube that is the result of turning the side in the given plane once clockwise"
+				},
+
+				{
+					"name": "toString()",
+					"arguments": [],
+					"returnType": "String",
+					"access": "Public",
+					"description": "Returns a String representation of this Cube"
+				}
+				
+			]
+
+		}
+
+	]
+
+}

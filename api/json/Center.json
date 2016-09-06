@@ -1,0 +1,94 @@
+{
+	"name": "Center extends Cublet",
+
+	"description": "A Center is the type of Cublet that has only 1 color and does not move on the cube. There are 6 centers.",
+
+	"constants": [
+
+		
+
+	],
+
+	"instanceVariables": [
+
+		
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "Center()",
+					"arguments": [
+						{
+							"name": "solvedX",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "solvedY",
+							"type": "YCoordinate"
+						},
+
+						{
+							"name": "solvedZ",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "Center",
+					"access": "Public",
+					"overrides": "Cublet()",
+					"description": "Constructs a Center given its solved position (x, y, z). No orientation is required, as there is only one possible orientation."
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				
+				
+			]
+
+		}
+
+	]
+
+}

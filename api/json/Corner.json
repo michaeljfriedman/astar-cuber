@@ -1,0 +1,113 @@
+{
+	"name": "Corner extends Cublet",
+
+	"description": "A Corner is the type of Cublet that has 3 colors and sits on the corners of the cube. There are 8 corners on the cube.",
+
+	"constants": [
+
+		
+
+	],
+
+	"instanceVariables": [
+
+		
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "Corner()",
+					"arguments": [
+						{
+							"name": "solvedX",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "solvedY",
+							"type": "YCoordinate"
+						},
+
+						{
+							"name": "solvedZ",
+							"type": "ZCoordinate"
+						},
+
+						{
+							"name": "orientation",
+							"type": "int"
+						}
+					],
+					"returnType": "Corner",
+					"access": "Public",
+					"overrides": "Cublet()",
+					"description": "Constructs a Corner given its solved position (x, y, z), and its orientation."
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				{
+					"name": "twistClockwise()",
+					"arguments": [],
+					"returnType": "Corner",
+					"access": "Public",
+					"description": "Returns a new Corner representing this Corner twisted clockwise"
+				},
+
+				{
+					"name": "twistCounterClockwise()",
+					"arguments": [],
+					"returnType": "Corner",
+					"access": "Public",
+					"description": "Returns a new Corner representing this Corner twisted counter-clockwise"
+				}
+				
+			]
+
+		}
+
+	]
+
+}

@@ -1,0 +1,15 @@
+This is the framework for a single-page application API viewer. It allows a
+developer to write up APIs in JSON and view them in a nice format in a web browser.
+
+
+The framework requires the following from the developer:
+
+1) 	All JSON files go in the json/ sub-directory
+
+2) 	Write a file json/objects.json that contains a list of all objects for which
+	you would like to view the written API. The name of each object in this list
+	must be the same as the file name for its API (i.e. object "Animal" has its API
+	in "Animal.json").
+
+3) 	APIs written in JSON must adhere to the format read by the application. See the
+	sample files inthe json/ sub-directory to see this format.

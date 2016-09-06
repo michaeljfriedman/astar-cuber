@@ -1,0 +1,161 @@
+{
+	"name": "Cublet",
+
+	"description": "A Cublet represents a single piece on the Rubik's Cube. This is the superclass for the three types of pieces/cublets: corners (3 colors), edges (2 colors), and centers (1 color).",
+
+	"constants": [
+
+		{
+			"name": "ORIENTED",
+			"type": "int",
+			"description": "This integer value represents the oriented state of a Cublet"
+		}
+
+	],
+
+	"instanceVariables": [
+
+		{
+			"name": "solvedX",
+			"type": "XCoordinate",
+			"description": "The XCoordinate of this Cublet's solved position"
+		},
+
+		{
+			"name": "solvedY",
+			"type": "YCoordinate",
+			"description": "The YCoordinate of this Cublet's solved position"
+		},
+
+		{
+			"name": "solvedZ",
+			"type": "ZCoordinate",
+			"description": "The ZCoordinate of this Cublet's solved position"
+		},
+
+		{
+			"name": "orientation",
+			"type": "int",
+			"description": "An integer to represent the orientation of the Cublet. When equal to ORIENTED, the Cublet is considered correctly oriented. If equal to another value, it is considered unoriented."
+		}
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "Cublet()",
+					"arguments": [
+						{
+							"name": "solvedX",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "solvedY",
+							"type": "YCoordinate"
+						},
+
+						{
+							"name": "solvedZ",
+							"type": "ZCoordinate"
+						},
+
+						{
+							"name": "orientation",
+							"type": "int"
+						}
+					],
+					"returnType": "int",
+					"access": "Public",
+					"description": "Constructs a Cublet given its solved position (x, y, z), and its orientation. Note that a Cublet should always be initialized from one of its subclasses, never directly as a Cublet"
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				{
+					"name": "isPermuted()",
+					"arguments": [
+						{
+							"name": "currentX",
+							"type": "XCoordinate"
+						},
+
+						{
+							"name": "currentY",
+							"type": "YCoordinate"
+						},
+
+						{
+							"name": "currentZ",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "boolean",
+					"access": "Public",
+					"description": "Returns whether or not this Cublet is permuted in its solved position, given its current position (x, y, z)"
+				},
+
+				{
+					"name": "isOriented()",
+					"arguments": [],
+					"returnType": "boolean",
+					"access": "Public",
+					"description": "Returns whether or not this Cublet is correctly oriented"
+				},
+
+				{
+					"name": "toString()",
+					"arguments": [],
+					"returnType": "String",
+					"access": "Public",
+					"description": "Returns the String representation of this Cublet"
+				}
+				
+			]
+
+		}
+
+	]
+
+}

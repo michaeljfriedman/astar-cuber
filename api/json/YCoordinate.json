@@ -1,0 +1,59 @@
+{
+	"name": "YCoordinate implements Coordinate",
+
+	"description": "This is an implementation of Coordinate, meant to provide a specific type for a y coordinate (the second coordinate in a triplet)",
+
+	"constants": [],
+
+	"instanceVariables": [],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "YCoordinate()",
+					"arguments": [
+						{
+							"name": "value",
+							"type": "int"
+						}
+					],
+					"returnType": "YCoordinate",
+					"access": "Public",
+					"description": "Constructs an YCoordinate given its integer value"
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": []
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": []
+
+		},
+
+		{
+			"category": "Static",
+			"methods": []
+
+		},
+
+		{
+			"category": "Other",
+			"methods": []
+
+		}
+
+	]
+
+}
