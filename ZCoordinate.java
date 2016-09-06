@@ -3,16 +3,22 @@
 * Created: 9/5/16
 *
 *
-* Description: This is an interface for a Coordinate. It is a wrapper for a value,
-* intended to provide strict typing for x, y, and z coordinates separately
+* Description: This object represents a z coordinate.
 ***********************************************************************************/
 
-public interface Coordinate {
+public class ZCoordinate implements Coordinate {
 
 	// Instance variables
 	private int value;
 
+	// Constructors
+	public ZCoordinate(int value) {
+		this.value = value;
+	}
+
 	// Methods
-	public int value();
-	
+	public int value() {
+		return value;
+	}
+
 }
