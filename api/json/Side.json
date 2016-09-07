@@ -1,7 +1,7 @@
 {
-	"name": "Side implements Iterable(Cublet)",
+	"name": "Side",
 
-	"description": "A Side represents one side of the cube - the 9 pieces of a single face. It supports an operation for turning and iterating over all Cublets in clockwise order",
+	"description": "A Side represents one side of the cube - the 9 pieces of a single face. This class contains operations that can be done on a single side, which is identified by the Coordinate of the plane in which the side lives.",
 
 	"constants": [
 
@@ -11,17 +11,7 @@
 
 	"instanceVariables": [
 
-		{
-			"name": "cublets",
-			"type": "Cublet[]",
-			"description": "The array of Cublets that make up the side, in clockwise order starting from the top-left Cublet of the side."
-		},
 
-		{
-			"name": "plane",
-			"type": "Coordinate",
-			"description": "The XCoordinate, YCoordinate, or ZCoordinate representing the plane in which this side lives"
-		}
 
 	],
 
@@ -29,55 +19,19 @@
 
 		{
 			"category": "Constructors",
-			"methods": [
-
-				{
-					"name": "Side()",
-					"arguments": [
-						{
-							"name": "plane",
-							"type": "Coordinate",
-							"description": "The XCoordinate, YCoordinate, or ZCoordinate representing the plane in which this side lives"
-						},
-
-						{
-							"name": "cube",
-							"type": "Cube",
-							"description": "The Cube from which to extract the side"
-						}
-					],
-					"returnType": "Side",
-					"access": "Public",
-					"description": "Constructs a Side"
-				}
-
-			]
+			"methods": []
 
 		},
 
 		{
 			"category": "Getters",
-			"methods": [
-
-				{
-					"name": "getPlane()",
-					"arguments": [],
-					"returnType": "Coordinate",
-					"access": "Public",
-					"description": "Returns Coordinate representing the plane in which this Side lives"
-				}
-				
-			]
+			"methods": []
 
 		},
 
 		{
 			"category": "Setters",
-			"methods": [
-
-				
-				
-			]
+			"methods": []
 
 		},
 
@@ -85,25 +39,64 @@
 			"category": "Static",
 			"methods": [
 
-				
-				
-			]
+				{
+					"name": "turnClockwise()",
+					"arguments": [
+						{
+							"name": "side",
+							"type": "XCoordinate",
+							"description": "The XCoordinate of the plane in which the side lives. (e.g. Back side corresponds to an XCoordinate of 0)"
+						},
 
-		},
-
-		{
-			"category": "Overriden from Iterable",
-			"methods": [
+						{
+							"name": "cube",
+							"type": "Cube"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube with the given side turned clockwise"
+				},
 
 				{
-					"name": "iterator()",
-					"arguments": [],
-					"returnType": "Iterator<Cublet>",
-					"access": "Public",
-					"description": "Returns an Iterator over all the Cublets of this Side in clockwise order, starting from the top-left"
-				}
+					"name": "turnClockwise()",
+					"arguments": [
+						{
+							"name": "side",
+							"type": "YCoordinate",
+							"description": "The YCoordinate of the plane in which the side lives. (e.g. Left side corresponds to an YCoordinate of 0)"
+						},
 
+						{
+							"name": "cube",
+							"type": "Cube"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube with the given side turned clockwise"
+				},
+
+				{
+					"name": "turnClockwise()",
+					"arguments": [
+						{
+							"name": "side",
+							"type": "ZCoordinate",
+							"description": "The ZCoordinate of the plane in which the side lives. (e.g. Down side corresponds to an ZCoordinate of 0)"
+						},
+
+						{
+							"name": "cube",
+							"type": "Cube"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube with the given side turned clockwise"
+				}
 			]
+
 		},
 
 		{
@@ -112,18 +105,69 @@
 
 				{
 					"name": "permuteClockwise()",
-					"arguments": [],
-					"returnType": "Side",
+					"arguments": [
+						{
+							"name": "cublets",
+							"type": "Cublet[]"
+						}
+					],
+					"returnType": "Cublet[]",
 					"access": "Private",
-					"description": "Returns a new Side that permutes all the Cublets of this side one turn clockwise"
+					"description": "Returns a new array of Cublets representing the given array permuted one turn clockwise"
 				},
 
 				{
 					"name": "orientClockwise()",
-					"arguments": [],
-					"returnType": "Side",
+					"arguments": [
+						{
+							"name": "cublets",
+							"type": "Cublets[]"
+						},
+
+						{
+							"name": "side",
+							"type": "XCoordinate"
+						}
+					],
+					"returnType": "Cublet[]",
 					"access": "Private",
-					"description": "Returns a new Side that orients the Corners and Edges appropriately when making a clockwise turn of this Side"
+					"description": "Returns a new array of Cublets that orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
+				},
+
+				{
+					"name": "orientClockwise()",
+					"arguments": [
+						{
+							"name": "cublets",
+							"type": "Cublets[]"
+						},
+
+						{
+							"name": "side",
+							"type": "YCoordinate"
+						}
+					],
+					"returnType": "Cublet[]",
+					"access": "Private",
+					"description": "Returns a new array of Cublets that orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
+				},
+
+				{
+					"name": "orientClockwise()",
+					"arguments": [
+						{
+							"name": "cublets",
+							"type": "Cublets[]"
+						},
+
+						{
+							"name": "side",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "Cublet[]",
+					"access": "Private",
+					"description": "Returns a new array of Cublets that orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
 				}
 
 			]
@@ -131,25 +175,7 @@
 
 		{
 			"category": "Other",
-			"methods": [
-
-				{
-					"name": "turnClockwise()",
-					"arguments": [],
-					"returnType": "Side",
-					"access": "Public",
-					"description": "Returns a new Side representing this Side turned once clockwise"
-				},
-
-				{
-					"name": "toString()",
-					"arguments": [],
-					"returnType": "Strng",
-					"access": "Public",
-					"description": "Returns a String representation of this Side"
-				}
-				
-			]
+			"methods": []
 
 		}
 
