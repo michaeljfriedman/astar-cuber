@@ -9,9 +9,6 @@
 
 public interface Coordinate {
 
-	// Instance variables
-	private int value;
-
 	// Methods
 	public int value();
 	
