@@ -6,19 +6,12 @@
 * Description: This object represents a y coordinate.
 ***********************************************************************************/
 
-public class YCoordinate implements Coordinate {
-
-	// Instance variables
-	private int value;
+public class YCoordinate extends Coordinate {
 
 	// Constructors
-	public YCoordinate(int value) {
-		this.value = value;
-	}
 
-	// Methods
-	public int value() {
-		return value;
+	public YCoordinate(int value) {
+		super(value);
 	}
 
 }

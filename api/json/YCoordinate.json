@@ -1,7 +1,7 @@
 {
-	"name": "YCoordinate implements Coordinate",
+	"name": "YCoordinate extends Coordinate",
 
-	"description": "This is an implementation of Coordinate, meant to provide a specific type for a y coordinate (the second coordinate in a triplet)",
+	"description": "This is a subclass of Coordinate, meant to provide a specific type for a y coordinate (the second coordinate in a triplet)",
 
 	"constants": [],
 

@@ -6,19 +6,12 @@
 * Description: This object represents a z coordinate.
 ***********************************************************************************/
 
-public class ZCoordinate implements Coordinate {
-
-	// Instance variables
-	private int value;
+public class ZCoordinate extends Coordinate {
 
 	// Constructors
-	public ZCoordinate(int value) {
-		this.value = value;
-	}
 
-	// Methods
-	public int value() {
-		return value;
+	public ZCoordinate(int value) {
+		super(value);
 	}
 
 }

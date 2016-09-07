@@ -1,7 +1,7 @@
 {
-	"name": "ZCoordinate implements Coordinate",
+	"name": "ZCoordinate extends Coordinate",
 
-	"description": "This is an implementation of Coordinate, meant to provide a specific type for a z coordinate (the third coordinate in a triplet)",
+	"description": "This is a subclass of Coordinate, meant to provide a specific type for a z coordinate (the third coordinate in a triplet)",
 
 	"constants": [],
 

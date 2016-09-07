@@ -6,19 +6,12 @@
 * Description: This object represents an x coordinate.
 ***********************************************************************************/
 
-public class XCoordinate implements Coordinate {
-
-	// Instance variables
-	private int value;
+public class XCoordinate extends Coordinate {
 
 	// Constructors
-	public XCoordinate(int value) {
-		this.value = value;
-	}
 
-	// Methods
-	public int value() {
-		return value;
+	public XCoordinate(int value) {
+		super(value);
 	}
 
 }

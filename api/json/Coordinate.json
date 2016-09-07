@@ -1,7 +1,7 @@
 {
 	"name": "Coordinate",
 
-	"description": "A Coordinate is an interface for an integer-valued coordinate. Implementations of the coordinate can be used for stricter typing of coordinates (e.g. x, y, and z coordinates, separately), as opposed to using one type (e.g. int) for all coordinates.",
+	"description": "A Coordinate is a wrapper for an integer-valued coordinate. Subclasses of the Coordinate class can be used for stricter typing of coordinates (e.g. x, y, and z coordinates, separately), as opposed to using one type (e.g. int) for all coordinates.",
 
 	"constants": [],
 
@@ -19,7 +19,22 @@
 
 		{
 			"category": "Constructors",
-			"methods": []
+			"methods": [
+
+				{
+					"name": "Coordinate()",
+					"arguments": [
+						{
+							"name": "value",
+							"type": "int"
+						}
+					],
+					"returnType": "Coordinate",
+					"access": "Public",
+					"description": "Constructs a Coordinate with the given value"
+				}
+
+			]
 
 		},
 
@@ -32,7 +47,7 @@
 					"arguments": [],
 					"returnType": "int",
 					"access": "Public",
-					"description": "Returns this instance's integer value"
+					"description": "Returns this Coordinate's integer value"
 				}
 				
 			]
