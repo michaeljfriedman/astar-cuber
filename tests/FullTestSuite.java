@@ -4,7 +4,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
-	TestCoordinates.class
+	TestCoordinates.class,
+	TestCublets.class
 })
 
 public class FullTestSuite {}
