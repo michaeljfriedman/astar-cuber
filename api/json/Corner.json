@@ -48,6 +48,19 @@
 					"access": "Public",
 					"overrides": "Cublet()",
 					"description": "Constructs a Corner given its solved position (x, y, z), and its orientation."
+				},
+
+				{
+					"name": "Corner()",
+					"arguments": [
+						{
+							"name": "corner",
+							"type": "Corner"
+						}
+					],
+					"returnType": "Corner",
+					"access": "Public",
+					"description": "Constructs a copy of the given Corner"
 				}
 
 			]

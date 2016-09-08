@@ -48,6 +48,19 @@
 					"access": "Public",
 					"overrides": "Cublet()",
 					"description": "Constructs an Edge given its solved position (x, y, z), and its orientation."
+				},
+
+				{
+					"name": "Edge()",
+					"arguments": [
+						{
+							"name": "edge",
+							"type": "Edge"
+						}
+					],
+					"returnType": "Edge",
+					"access": "Public",
+					"description": "Constructs a copy of the given Edge"
 				}
 
 			]

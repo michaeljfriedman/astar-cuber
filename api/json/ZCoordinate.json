@@ -24,6 +24,19 @@
 					"returnType": "ZCoordinate",
 					"access": "Public",
 					"description": "Constructs an ZCoordinate given its integer value"
+				},
+
+				{
+					"name": "ZCoordinate()",
+					"arguments": [
+						{
+							"name": "coordinate",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "ZCoordinate",
+					"access": "Public",
+					"description": "Constructs a copy of the given ZCoordinate"
 				}
 
 			]

@@ -16,10 +16,20 @@ public class Coordinate {
 	
 	// Constructors
 
+	/**
+	 * Construct a Coordinate with the given integer value
+	 */
 	public Coordinate(int value) {
 		this.value = value;
 	}
 
+	/**
+	 * Construct a new Coordinate with the same value as the Coordinate given
+	 */
+	public Coordinate(Coordinate coordinate) {
+		this.value = coordinate.value();
+	}
+	
 
 	// Methods
 
@@ -29,5 +39,14 @@ public class Coordinate {
 	public int value() {
 		return value;
 	}
+
+	/**
+	 * Returns wheter this Coordinate's value is the same as that Coordinate's
+	 * value
+	 */
+	public boolean equals(Coordinate that) {
+		return this.value() == that.value();
+	}
+	
 	
 }

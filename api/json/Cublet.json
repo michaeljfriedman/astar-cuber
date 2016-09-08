@@ -73,6 +73,19 @@
 					"returnType": "int",
 					"access": "Public",
 					"description": "Constructs a Cublet given its solved position (x, y, z), and its orientation. Note that a Cublet should always be initialized from one of its subclasses, never directly as a Cublet"
+				},
+
+				{
+					"name": "Cublet()",
+					"arguments": [
+						{
+							"name": "cublet",
+							"type": "Cublet"
+						}
+					],
+					"returnType": "Cublet",
+					"access": "Public",
+					"description": "Constructs a copy of the given Cublet"
 				}
 
 			]
@@ -142,6 +155,19 @@
 					"returnType": "boolean",
 					"access": "Public",
 					"description": "Returns whether or not this Cublet is correctly oriented"
+				},
+
+				{
+					"name": "equals()",
+					"arguments": [
+						{
+							"name": "that",
+							"type": "Cublet"
+						}
+					],
+					"returnType": "boolean",
+					"access": "Public",
+					"description": "Returns whether this Cublet is the same as that Cublet"
 				},
 
 				{

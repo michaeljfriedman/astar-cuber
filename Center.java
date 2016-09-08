@@ -16,4 +16,12 @@ public class Center extends Cublet {
 		super(solvedX, solvedY, solvedZ, Cublet.ORIENTED);
 	}
 
+	/**
+	 * Construct a copy of the given Center
+	 */
+	public Center(Center center) {
+		super(center);
+	}
+	
+
 }

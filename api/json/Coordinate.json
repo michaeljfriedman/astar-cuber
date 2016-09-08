@@ -32,6 +32,19 @@
 					"returnType": "Coordinate",
 					"access": "Public",
 					"description": "Constructs a Coordinate with the given value"
+				},
+
+				{
+					"name": "Coordinate()",
+					"arguments": [
+						{
+							"name": "coordinate",
+							"type": "Coordinate"
+						}
+					],
+					"returnType": "Coordiate",
+					"access": "Public",
+					"description": "Constructs a copy of the given Coordinate"
 				}
 
 			]
@@ -68,7 +81,22 @@
 
 		{
 			"category": "Other",
-			"methods": []
+			"methods": [
+
+				{
+					"name": "eqauls()",
+					"arguments": [
+						{
+							"name": "that",
+							"type": "Coordinate"
+						}
+					],
+					"returnType": "boolean",
+					"access": "Public",
+					"description": "Returns whether this Coordinate's value equals that Coordinate's value"
+				}
+
+			]
 
 		}
 

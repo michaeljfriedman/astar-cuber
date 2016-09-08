@@ -80,6 +80,14 @@
 
 				{
 					"name": "Cube()",
+					"arguments": [],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Constructs a solved Cube"
+				},
+
+				{
+					"name": "Cube()",
 					"arguments": [
 						{
 							"name": "cube",
@@ -89,14 +97,6 @@
 					"returnType": "Cube",
 					"access": "Public",
 					"description": "Constructs a copy of the given Cube"
-				},
-
-				{
-					"name": "Cube()",
-					"arguments": [],
-					"returnType": "Cube",
-					"access": "Public",
-					"description": "Constructs a solved Cube"
 				}
 
 			]
@@ -273,6 +273,19 @@
 					"returnType": "Cube",
 					"access": "Public",
 					"description": "Returns a new Cube that is the result of turning the side in the given plane once clockwise"
+				},
+
+				{
+					"name": "equals()",
+					"arguments": [
+						{
+							"name": "that",
+							"type": "Cube"
+						}
+					],
+					"returnType": "boolean",
+					"access": "Public",
+					"description": "Returns whether this Cube is the same as that Cube"
 				},
 
 				{

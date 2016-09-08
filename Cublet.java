@@ -38,6 +38,17 @@ public class Cublet {
 		this.orientation = orientation;
 	}
 
+	/**
+	 * Construct a copy of the given Cublet
+	 */
+	public Cublet(Cublet cublet) {
+		this.solvedX = new XCoordinate(cublet.solvedX);
+		this.solvedY = new YCoordinate(cublet.solvedY);
+		this.solvedZ = new ZCoordinate(cublet.solvedZ);
+		this.orientation = cublet.orientation;
+	}
+	
+
 
 	// Methods
 
@@ -60,6 +71,18 @@ public class Cublet {
 	}
 
 	/**
+	 * Returns whether this Cublet is the same as that Cublet
+	 */
+	public boolean equals(Cublet that) {
+		if (!this.solvedX.equals(that.solvedX)) 	return false;
+		if (!this.solvedY.equals(that.solvedY)) 	return false;
+		if (!this.solvedZ.equals(that.solvedZ)) 	return false;
+		if (this.orientation != that.orientation) 	return false;
+		return true;
+	}
+	
+
+	/**
 	 * Returns a String representation of this Cublet
 	 */
 	public String toString() {
@@ -70,7 +93,7 @@ public class Cublet {
 			solvedZ.value()
 		);
 
-		return 	"Position: " + position + "\n"
+		return 	"Solved position: " + position + "\n"
 				+ "Orientation: " + orientation;
 	}
 

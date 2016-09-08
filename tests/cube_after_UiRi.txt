@@ -1,0 +1,48 @@
+# This cube requires moves R, U to become solved. This means all pieces are oriented
+# except those currently on the R side. Of those, only corners are unoriented, since
+# L/R moves do not change edge orientation.
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# U layer - pieces not affected by R
+# 	Corners
+	0	2	2		0	0	2		0
+	0	0	2		2	0	2		0
+
+#	Edges
+	1	2	2		0	1	2		0
+	0	1	2		1	0	2		0
+	1	0	2		2	1	2		0
+
+#	Center
+	1	1	2		1	1	2		0
+
+# R layer - corners
+	2	2	0		0	2	0		2
+	0	2	0		0	2	2		1
+	2	2	2		2	2	2		2
+	2	0	2		2	2	0		1
+
+# R layer - edges
+	0	2	1		1	2	2		0
+	1	2	0		0	2	1		0
+	2	2	2		1	2	0		0
+	2	0	2		2	2	1		0
+
+# R layer - center
+	1	2	1		1	2	1		0
+
+# Everything else
+	0	0	0		0	0	0		0
+	0	0	1		0	0	1		0
+	0	1	0		0	1	0		0
+	0	1	1		0	1	1		0
+	1	0	0		1	0	0		0
+	1	0	1		1	0	1		0
+	1	1	0		1	1	0		0
+	1	1	1		1	1	1		0
+	2	0	0		2	0	0		0
+	2	0	1		2	0	1		0
+	2	1	0		2	1	0		0
+	2	1	1		2	1	1		0
+

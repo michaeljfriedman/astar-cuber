@@ -10,8 +10,19 @@ public class ZCoordinate extends Coordinate {
 
 	// Constructors
 
+	/**
+	 * Construct an ZCoordinate with the given value
+	 */
 	public ZCoordinate(int value) {
 		super(value);
 	}
+
+	/**
+	 * Construct a new ZCoordinate with the same value as the given ZCoordinate
+	 */
+	public ZCoordinate(ZCoordinate coordinate) {
+		super(coordinate);
+	}
+	
 
 }

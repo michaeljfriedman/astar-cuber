@@ -56,6 +56,11 @@ public class TestCublets extends TestCase {
 		assertTrue(cublet.isOriented());
 	}
 
+	public void testCubletCopy() {
+		Cublet copy = new Cublet(cublet);
+		assertTrue(cublet.equals(copy));
+	}
+
 
 	// Corner tests
 
@@ -119,6 +124,11 @@ public class TestCublets extends TestCase {
 		);
 	}
 
+	public void testCornerCopy() {
+		Corner copy = new Corner(corner);
+		assertTrue(corner.equals(copy));
+	}
+
 
 	// Edge tests
 
@@ -139,6 +149,11 @@ public class TestCublets extends TestCase {
 		assertTrue(restored.isOriented());
 	}
 
+	public void testEdgeCopy() {
+		Edge copy = new Edge(edge);
+		assertTrue(edge.equals(copy));
+	}
+
 
 	// Center tests
 
@@ -148,5 +163,10 @@ public class TestCublets extends TestCase {
 
 	public void testCenterOrientation() {
 		assertTrue(center.isOriented());
+	}
+
+	public void testCenterCopy() {
+		Center copy = new Center(center);
+		assertTrue(center.equals(copy));
 	}
 }

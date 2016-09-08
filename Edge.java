@@ -26,6 +26,14 @@ public class Edge extends Cublet {
 		super(solvedX, solvedY, solvedZ, orientation);
 	}
 
+	/**
+	 * Construct a copy of the given Edge
+	 */
+	public Edge(Edge edge) {
+		super(edge);
+	}
+	
+
 
 	// Additional methods
 

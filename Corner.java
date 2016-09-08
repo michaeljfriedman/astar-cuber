@@ -26,6 +26,14 @@ public class Corner extends Cublet {
 		super(solvedX, solvedY, solvedZ, orientation);
 	}
 
+	/**
+	 * Construct a copy of the given Corner
+	 */
+	public Corner(Corner corner) {
+		super(corner);
+	}
+	
+
 
 	// Additional methods
 

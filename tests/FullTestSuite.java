@@ -5,7 +5,8 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
 	TestCoordinates.class,
-	TestCublets.class
+	TestCublets.class,
+	TestCube.class
 })
 
 public class FullTestSuite {}

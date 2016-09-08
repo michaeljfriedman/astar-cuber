@@ -24,6 +24,19 @@
 					"returnType": "XCoordinate",
 					"access": "Public",
 					"description": "Constructs an XCoordinate given its integer value"
+				},
+
+				{
+					"name": "XCoordinate()",
+					"arguments": [
+						{
+							"name": "coordinate",
+							"type": "XCoordinate"
+						}
+					],
+					"returnType": "XCoordinate",
+					"access": "Public",
+					"description": "Constructs a copy of the given XCoordinate"
 				}
 
 			]

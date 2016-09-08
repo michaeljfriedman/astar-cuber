@@ -24,6 +24,19 @@
 					"returnType": "YCoordinate",
 					"access": "Public",
 					"description": "Constructs an YCoordinate given its integer value"
+				},
+
+				{
+					"name": "YCoordinate()",
+					"arguments": [
+						{
+							"name": "coordinate",
+							"type": "YCoordinate"
+						}
+					],
+					"returnType": "YCoordinate",
+					"access": "Public",
+					"description": "Constructs a copy of the given YCoordinate"
 				}
 
 			]

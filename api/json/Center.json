@@ -43,6 +43,19 @@
 					"access": "Public",
 					"overrides": "Cublet()",
 					"description": "Constructs a Center given its solved position (x, y, z). No orientation is required, as there is only one possible orientation."
+				},
+
+				{
+					"name": "Center()",
+					"arguments": [
+						{
+							"name": "center",
+							"type": "Center"
+						}
+					],
+					"returnType": "Center",
+					"access": "Public",
+					"description": "Constructs a copy of the given Center"
 				}
 
 			]
