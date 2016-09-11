@@ -6,6 +6,12 @@
 	"constants": [
 
 		{
+			"name": "GRID_SIZE",
+			"type": "int",
+			"description": "The grid size of the Rubik's Cube, which is 3 in this case (the standard Rubik's Cube)"
+		},
+
+		{
 			"name": "B",
 			"type": "XCoordinate",
 			"description": "The XCoordinate representing the plane of the back (B) side of the cube"
@@ -75,7 +81,20 @@
 					],
 					"returnType": "Cube",
 					"access": "Public",
-					"description": "Constructs a Cube from a file"
+					"description": "Constructs a Cube from a file. The cube represented in the file must be solvable"
+				},
+
+				{
+					"name": "Cube()",
+					"arguments": [
+						{
+							"name": "cublets",
+							"type": "Cublet[][][]"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Constructs a Cube from a 3D array of Cublets. The array must model a valid and solvable Rubik's Cube"
 				},
 
 				{
@@ -231,26 +250,6 @@
 		},
 
 		{
-			"category": "Private Helper Methods",
-			"methods": [
-
-				{
-					"name": "apply()",
-					"arguments": [
-						{
-							"name": "side",
-							"type": "Side"
-						}
-					],
-					"returnType": "Cube",
-					"access": "Private",
-					"description": "Returns a new Cube replacing the corresponding side with the one provided"
-				}
-
-			]
-		},
-
-		{
 			"category": "Other",
 			"methods": [
 
@@ -267,7 +266,33 @@
 					"arguments": [
 						{
 							"name": "plane",
-							"type": "Coordinate"
+							"type": "XCoordinate"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube that is the result of turning the side in the given plane once clockwise"
+				},
+
+				{
+					"name": "turnClockwise()",
+					"arguments": [
+						{
+							"name": "plane",
+							"type": "YCoordinate"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube that is the result of turning the side in the given plane once clockwise"
+				},
+
+				{
+					"name": "turnClockwise()",
+					"arguments": [
+						{
+							"name": "plane",
+							"type": "ZCoordinate"
 						}
 					],
 					"returnType": "Cube",

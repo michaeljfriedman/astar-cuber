@@ -1,0 +1,39 @@
+# This cube is in the state just after making a R turn from a solved cube. This means
+# all corners have been unoriented, and edges remain oriented.
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# R side - corners
+	2	2	2		0	2	2		1
+	0	2	2		0	2	0		2
+	0	2	0		2	2	0		1
+	2	2	0		2	2	2		2
+
+# R side - edges
+	1	2	2		0	2	1		0
+	0	2	1		1	2	0		0
+	1	2	0		2	2	1		0
+	2	2	1		1	2	2		0
+
+# R side - center
+	1	2	1		1	2	1		0
+
+# Everything else
+	0	0	0		0	0	0		0
+	0	0	1		0	0	1		0
+	0	0	2		0	0	2		0
+	0	1	0		0	1	0		0
+	0	1	1		0	1	1		0
+	0	1	2		0	1	2		0
+	1	0	0		1	0	0		0
+	1	0	1		1	0	1		0
+	1	0	2		1	0	2		0
+	1	1	0		1	1	0		0
+	1	1	1		1	1	1		0
+	1	1	2		1	1	2		0
+	2	0	0		2	0	0		0
+	2	0	1		2	0	1		0
+	2	0	2		2	0	2		0
+	2	1	0		2	1	0		0
+	2	1	1		2	1	1		0
+	2	1	2		2	1	2		0

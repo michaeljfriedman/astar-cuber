@@ -106,8 +106,6 @@
 			"category": "Setters",
 			"methods": [
 
-				
-				
 			]
 
 		},
@@ -182,6 +180,12 @@
 
 		}
 
+	],
+
+	"subclasses": [
+		{ "name": "Center" },
+		{ "name": "Corner" },
+		{ "name": "Edge" }
 	]
 
 }

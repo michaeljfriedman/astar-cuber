@@ -1,0 +1,39 @@
+# This cube is in the state just after making a F turn from a solved cube. This means
+# that all edges have been unoriented, and all corners have been unoriented.
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# F side - corners
+	2	0	2		2	2	2		1
+	2	2	2		2	2	0		2
+	2	2	0		2	0	0		1
+	2	0	0		2	0	2		2
+
+# F side - edges
+	2	1	2		2	2	1		1
+	2	2	1		2	1	0		1
+	2	1	0		2	0	1		1
+	2	0	1		2	1	2		1
+
+# F side - center
+	2	1	1		2	1	1		0
+
+# Everything else
+	0	0	0		0	0	0		0
+	0	0	1		0	0	1		0
+	0	0	2		0	0	2		0
+	0	1	0		0	1	0		0
+	0	1	1		0	1	1		0
+	0	1	2		0	1	2		0
+	0	2	0		0	2	0		0
+	0	2	1		0	2	1		0
+	0	2	2		0	2	2		0
+	1	0	0		1	0	0		0
+	1	0	1		1	0	1		0
+	1	0	2		1	0	2		0
+	1	1	0		1	1	0		0
+	1	1	1		1	1	1		0
+	1	1	2		1	1	2		0
+	1	2	0		1	2	0		0
+	1	2	1		1	2	1		0
+	1	2	2		1	2	2		0

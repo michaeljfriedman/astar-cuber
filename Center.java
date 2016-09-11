@@ -23,5 +23,4 @@ public class Center extends Cublet {
 		super(center);
 	}
 	
-
 }

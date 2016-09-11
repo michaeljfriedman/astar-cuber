@@ -1,6 +1,7 @@
-import junit.framework.*;
+import org.junit.*;
+import static org.junit.Assert.*;
 
-public class TestCublets extends TestCase {
+public class TestCublets {
 
 	private XCoordinate cubletX;
 	private YCoordinate cubletY;
@@ -22,8 +23,8 @@ public class TestCublets extends TestCase {
 	private ZCoordinate centerZ;
 	private Center center;
 
-	@Override
-	protected void setUp() {
+	@Before
+	public void setUp() {
 		cubletX = new XCoordinate(0);
 		cubletY = new YCoordinate(0);
 		cubletZ = new ZCoordinate(0);
@@ -48,14 +49,17 @@ public class TestCublets extends TestCase {
 
 	// Cublet tests
 
+	@Test
 	public void testCubletPermutation() {
 		assertTrue(cublet.isPermuted(cubletX, cubletY, cubletZ));
 	}
 
+	@Test
 	public void testCubletOrientation() {
 		assertTrue(cublet.isOriented());
 	}
 
+	@Test
 	public void testCubletCopy() {
 		Cublet copy = new Cublet(cublet);
 		assertTrue(cublet.equals(copy));
@@ -64,14 +68,17 @@ public class TestCublets extends TestCase {
 
 	// Corner tests
 
+	@Test
 	public void testCornerPermutation() {
 		assertTrue(corner.isPermuted(cornerX, cornerY, cornerZ));
 	}
 
+	@Test
 	public void testCornerOrientation() {
 		assertTrue(corner.isOriented());
 	}
 
+	@Test
 	public void testCornerTwists() {
 		// Test that twisting clockwise 3 times restores orientation
 		Corner twisted1 = corner.twistClockwise();
@@ -124,6 +131,7 @@ public class TestCublets extends TestCase {
 		);
 	}
 
+	@Test
 	public void testCornerCopy() {
 		Corner copy = new Corner(corner);
 		assertTrue(corner.equals(copy));
@@ -132,14 +140,17 @@ public class TestCublets extends TestCase {
 
 	// Edge tests
 
+	@Test
 	public void testEdgePermutation() {
 		assertTrue(edge.isPermuted(edgeX, edgeY, edgeZ));
 	}
 
+	@Test
 	public void testEdgeOrientation() {
 		assertTrue(edge.isOriented());
 	}
 
+	@Test
 	public void testEdgeFlip() {
 		// Test that flipping once unorients, and flipping twice reorients
 		Edge flipped = edge.flip();
@@ -149,24 +160,29 @@ public class TestCublets extends TestCase {
 		assertTrue(restored.isOriented());
 	}
 
+	@Test
 	public void testEdgeCopy() {
 		Edge copy = new Edge(edge);
 		assertTrue(edge.equals(copy));
 	}
-
+	
 
 	// Center tests
 
+	@Test
 	public void testCenterPermutation() {
 		assertTrue(center.isPermuted(centerX, centerY, centerZ));
 	}
 
+	@Test
 	public void testCenterOrientation() {
 		assertTrue(center.isOriented());
 	}
 
+	@Test
 	public void testCenterCopy() {
 		Center copy = new Center(center);
 		assertTrue(center.equals(copy));
 	}
+	
 }

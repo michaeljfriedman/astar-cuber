@@ -1,0 +1,122 @@
+{
+	"name": "Utilities",
+
+	"description": "This is a library of utility constants and methods for other classes in this project.",
+
+	"constants": [
+
+		{
+			"name": "CUBLET_EDGE",
+			"type": "int",
+			"description": "Integer label to identify a Cublet of type Edge"
+		},
+
+		{
+			"name": "CUBLET_CORNER",
+			"type": "int",
+			"description": "Integer label to identify a Cublet of type Corner"
+		},
+
+		{
+			"name": "CUBLET_CENTER",
+			"type": "int",
+			"description": "Integer label to identify a Cublet of type Center"
+		},
+
+		{
+			"name": "CUBLET_CORE",
+			"type": "int",
+			"description": "Integer label to identify a the core of the Rubik's Cube, which has no corresponding Cublet object type"
+		}
+
+	],
+
+	"instanceVariables": [
+
+		
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				{
+					"name": "typeOfCublet()",
+					"arguments": [
+						{
+							"name": "x",
+							"type": "int"
+						},
+
+						{
+							"name": "y",
+							"type": "int"
+						},
+
+						{
+							"name": "z",
+							"type": "int"
+						}
+					],
+					"returnType": "int",
+					"access": "Public",
+					"description": "Returns one of the integer lables for the type of Cublet that should be at location (x, y, z)"
+				}
+				
+			]
+
+		},
+
+		{
+			"category": "Private Helper Methods",
+			"methods": [
+
+			]
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				
+				
+			]
+
+		}
+
+	]
+
+}

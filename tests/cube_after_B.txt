@@ -1,0 +1,39 @@
+# This cube is in the state just after making a B turn from a solved cube. This means
+# that all edges have been unoriented, and all corners have been unoriented.
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# B side - corners
+	0	2	2		0	0	2		1
+	0	0	2		0	0	0		2
+	0	0	0		0	2	0		1
+	0	2	0		0	2	2		2
+
+# B side - edges
+	0	1	2		0	0	1		1
+	0	0	1		0	1	0		1
+	0	1	0		0	2	1		1
+	0	2	1		0	1	2		1
+
+# B side - center
+	0	1	1		0	1	1		0
+
+# Everything else
+	1	0	0		1	0	0		0
+	1	0	1		1	0	1		0
+	1	0	2		1	0	2		0
+	1	1	0		1	1	0		0
+	1	1	1		1	1	1		0
+	1	1	2		1	1	2		0
+	1	2	0		1	2	0		0
+	1	2	1		1	2	1		0
+	1	2	2		1	2	2		0
+	2	0	0		2	0	0		0
+	2	0	1		2	0	1		0
+	2	0	2		2	0	2		0
+	2	1	0		2	1	0		0
+	2	1	1		2	1	1		0
+	2	1	2		2	1	2		0
+	2	2	0		2	2	0		0
+	2	2	1		2	2	1		0
+	2	2	2		2	2	2		0

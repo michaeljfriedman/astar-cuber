@@ -14,13 +14,8 @@ public class Cube {
 
 	// Constants
 
-	private static final int NUM_SIDES = 3;		// number of sides on the cube
+	public static final int GRID_SIZE = 3;		// the grid size of the cube
 
-	// Integer labels to identify types of Cublets
-	private static final int CUBLET_EDGE 	= 0;
-	private static final int CUBLET_CORNER 	= 1;
-	private static final int CUBLET_CENTER	= 2;
-	private static final int CUBLET_CORE 	= 3;
 
 	public static final XCoordinate B = new XCoordinate(0);		// back side
 	public static final XCoordinate F = new XCoordinate(2);		// front side
@@ -42,30 +37,6 @@ public class Cube {
 	// Constructors
 
 	/**
-	 * Returns the number of values in the given array that equal the query value
-	 */
-	private int numValuesEqualTo(int query, int[] values) {
-		int numEqual = 0;
-		for (int i = 0; i < values.length; i++) {
-			if (values[i] == query) numEqual++;
-		}
-		return numEqual;
-	}
-	
-	/**
-	 * Returns the type of Cublet that should be initialized at location (x, y, z)
-	 */
-	private int typeOfCublet(int x, int y, int z) {
-		// The type of cublet depends entirely on how many coordinates have value 1
-		int numValuesEqualTo1 = numValuesEqualTo(1, new int[] { x, y, z });
-		if 		(numValuesEqualTo1 == 3) 	return CUBLET_CORE;
-		else if (numValuesEqualTo1 == 2) 	return CUBLET_CENTER;
-		else if (numValuesEqualTo1 == 1) 	return CUBLET_EDGE;
-		else 								return CUBLET_CORNER;
-	}
-	
-
-	/**
 	 * Construct a Cube from a file. All 26 cublets are read in, one line per cublet:
 	 *
 	 * x0 y0 z0 x y z orientation
@@ -81,7 +52,7 @@ public class Cube {
 	 * construction will fail.
 	 */
 	public Cube(String filename) {
-		cublets = new Cublet[NUM_SIDES][NUM_SIDES][NUM_SIDES];
+		cublets = new Cublet[GRID_SIZE][GRID_SIZE][GRID_SIZE];
 
 		String comment = "#";
 		In input = new In(filename);
@@ -100,21 +71,21 @@ public class Cube {
 			int y 	= Integer.parseInt(input.readString());
 			int z 	= Integer.parseInt(input.readString());
 			int orientation = Integer.parseInt(input.readString());
-			int type = typeOfCublet(x, y, z);
+			int type = Utilities.typeOfCublet(x, y, z);
 			switch (type) {
-				case CUBLET_EDGE:
+				case Utilities.CUBLET_EDGE:
 					cublets[x][y][z] = new Edge(new XCoordinate(x0), 
 						new YCoordinate(y0), new ZCoordinate(z0), orientation);
 					break;
-				case CUBLET_CORNER:
+				case Utilities.CUBLET_CORNER:
 					cublets[x][y][z] = new Corner(new XCoordinate(x0), 
 						new YCoordinate(y0), new ZCoordinate(z0), orientation);
 					break;
-				case CUBLET_CENTER:
+				case Utilities.CUBLET_CENTER:
 					cublets[x][y][z] = new Center(new XCoordinate(x0), 
 						new YCoordinate(y0), new ZCoordinate(z0));
 					break;
-				case CUBLET_CORE:
+				case Utilities.CUBLET_CORE:
 					cublets[x][y][z] = new Cublet(new XCoordinate(x0),
 						new YCoordinate(y0), new ZCoordinate(z0), orientation);
 					break;
@@ -129,9 +100,9 @@ public class Cube {
 			new YCoordinate(core), new ZCoordinate(core), Cublet.ORIENTED);
 
 		// Validate that every position was filled with a Cublet
-		for (int x = 0; x < NUM_SIDES; x++) {
-			for (int y = 0; y < NUM_SIDES; y++) {
-				for (int z = 0; z < NUM_SIDES; z++) {
+		for (int x = 0; x < GRID_SIZE; x++) {
+			for (int y = 0; y < GRID_SIZE; y++) {
+				for (int z = 0; z < GRID_SIZE; z++) {
 					if (cublets[x][y][z] == null)
 						throw new IllegalArgumentException("File is not a complete Rubik's Cube.");
 				}
@@ -142,14 +113,78 @@ public class Cube {
 	}
 
 	/**
+	 * Construct a Cube from a 3D array of Cublets. The array must model a valid
+	 * and solvable Rubik's Cube
+	 */
+	public Cube(Cublet[][][] cublets) {
+		if (cublets == null)
+			throw new NullPointerException("Cublet array is null");
+		if (cublets.length != GRID_SIZE || cublets[0].length != GRID_SIZE || cublets[0][0].length != GRID_SIZE)
+			throw new IllegalArgumentException("Cublet array does not represent a 3x3x3 Rubik's Cube");
+
+		// Mapping from a Cublet's solved position to whether or not that Cublet
+		// was found in the given array
+		boolean[][][] found = new boolean[GRID_SIZE][GRID_SIZE][GRID_SIZE];
+
+		// Copy the array
+		this.cublets = new Cublet[GRID_SIZE][GRID_SIZE][GRID_SIZE];
+		for (int x = 0; x < GRID_SIZE; x++) {
+			for (int y = 0; y < GRID_SIZE; y++) {
+				for (int z = 0; z < GRID_SIZE; z++) {
+					int type = Utilities.typeOfCublet(x, y, z);
+					switch (type) {
+						case Utilities.CUBLET_EDGE:
+							this.cublets[x][y][z] = new Edge((Edge) cublets[x][y][z]); 
+							break;
+						case Utilities.CUBLET_CORNER:
+							this.cublets[x][y][z] = new Corner((Corner) cublets[x][y][z]);
+							break;
+						case Utilities.CUBLET_CENTER:
+							this.cublets[x][y][z] = new Center((Center) cublets[x][y][z]);
+							break;
+						case Utilities.CUBLET_CORE:
+							this.cublets[x][y][z] = new Cublet(cublets[x][y][z]);
+							break;
+						default:
+							throw new RuntimeException("Error in Cube construction by array: this error will never be thrown.");
+					}
+
+					// TODO: Need to get solved position of the cublet just copied so it can be marked as found
+				}
+			}
+		}
+
+		// TODO: Validate that all of the pieces are present in the new array
+
+		// TODO: Validate that this Cube is solvable
+	}
+	
+
+	/**
 	 * Construct a copy of the given Cube
 	 */
 	public Cube(Cube cube) {
-		this.cublets = new Cublet[NUM_SIDES][NUM_SIDES][NUM_SIDES];
-		for (int x = 0; x < NUM_SIDES; x++) {
-			for (int y = 0; y < NUM_SIDES; y++) {
-				for (int z = 0; z < NUM_SIDES; z++) {
-					this.cublets[x][y][z] = new Cublet(cube.cublets[x][y][z]);
+		this.cublets = new Cublet[GRID_SIZE][GRID_SIZE][GRID_SIZE];
+		for (int x = 0; x < GRID_SIZE; x++) {
+			for (int y = 0; y < GRID_SIZE; y++) {
+				for (int z = 0; z < GRID_SIZE; z++) {
+					int type = Utilities.typeOfCublet(x, y, z);
+					switch (type) {
+						case Utilities.CUBLET_EDGE:
+							this.cublets[x][y][z] = new Edge((Edge) cube.cublets[x][y][z]); 
+							break;
+						case Utilities.CUBLET_CORNER:
+							this.cublets[x][y][z] = new Corner((Corner) cube.cublets[x][y][z]);
+							break;
+						case Utilities.CUBLET_CENTER:
+							this.cublets[x][y][z] = new Center((Center) cube.cublets[x][y][z]);
+							break;
+						case Utilities.CUBLET_CORE:
+							this.cublets[x][y][z] = new Cublet(cube.cublets[x][y][z]);
+							break;
+						default:
+							throw new RuntimeException("Error in Cube copy: this error will never be thrown.");
+					}
 				}
 			}
 		}
@@ -169,7 +204,19 @@ public class Cube {
 	 * Returns the Cublet at position (x, y, z)
 	 */
 	public Cublet getCublet(XCoordinate x, YCoordinate y, ZCoordinate z) {
-		return new Cublet(cublets[x.value()][y.value()][z.value()]);
+		int type = Utilities.typeOfCublet(x.value(), y.value(), z.value());
+		switch (type) {
+			case Utilities.CUBLET_EDGE:
+				return new Edge((Edge) cublets[x.value()][y.value()][z.value()]);
+			case Utilities.CUBLET_CORNER:
+				return new Corner((Corner) cublets[x.value()][y.value()][z.value()]);
+			case Utilities.CUBLET_CENTER:
+				return new Center((Center) cublets[x.value()][y.value()][z.value()]);
+			case Utilities.CUBLET_CORE:
+				return new Cublet(cublets[x.value()][y.value()][z.value()]);
+			default:
+				throw new RuntimeException("Error in retrieving a Cublet: this error will never be thrown.");
+		}
 	}
 
 	/**
@@ -210,9 +257,9 @@ public class Cube {
 	 * Returns whether this Cube is solved
 	 */
 	public boolean isSolved() {
-		for (int x = 0; x < NUM_SIDES; x++) {
-			for (int y = 0; y < NUM_SIDES; y++) {
-				for (int z = 0; z < NUM_SIDES; z++) {
+		for (int x = 0; x < GRID_SIZE; x++) {
+			for (int y = 0; y < GRID_SIZE; y++) {
+				for (int z = 0; z < GRID_SIZE; z++) {
 					XCoordinate cx = new XCoordinate(x);
 					YCoordinate cy = new YCoordinate(y);
 					ZCoordinate cz = new ZCoordinate(z);
@@ -230,17 +277,33 @@ public class Cube {
 	 * Returns a new Cube that is the result of turning the side in the given plane
 	 * once clockwise
 	 */
-	public Cube turnClockwise(Coordinate plane) {
-		return null;
+	public Cube turnClockwise(XCoordinate plane) {
+		return Side.turnClockwise(plane, this);
+	}
+
+	/**
+	 * Returns a new Cube that is the result of turning the side in the given plane
+	 * once clockwise
+	 */
+	public Cube turnClockwise(YCoordinate plane) {
+		return Side.turnClockwise(plane, this);
+	}
+
+	/**
+	 * Returns a new Cube that is the result of turning the side in the given plane
+	 * once clockwise
+	 */
+	public Cube turnClockwise(ZCoordinate plane) {
+		return Side.turnClockwise(plane, this);
 	}
 
 	/**
 	 * Return whether this Cube is the same as that Cube
 	 */
 	public boolean equals(Cube that) {
-		for (int x = 0; x < NUM_SIDES; x++) {
-			for (int y = 0; y < NUM_SIDES; y++) {
-				for (int z = 0; z < NUM_SIDES; z++) {
+		for (int x = 0; x < GRID_SIZE; x++) {
+			for (int y = 0; y < GRID_SIZE; y++) {
+				for (int z = 0; z < GRID_SIZE; z++) {
 					if (!this.cublets[x][y][z].equals(that.cublets[x][y][z]))
 						return false;
 				}
@@ -267,15 +330,15 @@ public class Cube {
 		mapZ.put(U.value(), "U");
 
 		StringBuilder s = new StringBuilder();
-		for (int x = 0; x < NUM_SIDES; x++) {
-			for (int y = 0; y < NUM_SIDES; y++) {
-				for (int z = 0; z < NUM_SIDES; z++) {
+		for (int x = 0; x < GRID_SIZE; x++) {
+			for (int y = 0; y < GRID_SIZE; y++) {
+				for (int z = 0; z < GRID_SIZE; z++) {
 					// Construct the cube notation for the next cublet using its
 					// coordinates
 					String cubletLabel = "";
-					int type = typeOfCublet(x, y, z);
+					int type = Utilities.typeOfCublet(x, y, z);
 					switch (type) {
-						case CUBLET_EDGE:
+						case Utilities.CUBLET_EDGE:
 							if (x == EDGE.value())
 								cubletLabel = mapY.get(y) + mapZ.get(z);
 							else if (y == EDGE.value())
@@ -283,13 +346,13 @@ public class Cube {
 							else
 								cubletLabel = mapX.get(x) + mapY.get(y);
 							break;
-						case CUBLET_CORNER:
+						case Utilities.CUBLET_CORNER:
 							cubletLabel = mapX.get(x) + mapY.get(y) + mapZ.get(z);
 							break;
-						case CUBLET_CENTER:
+						case Utilities.CUBLET_CENTER:
 							cubletLabel = "Center";
 							break;
-						case CUBLET_CORE:
+						case Utilities.CUBLET_CORE:
 							cubletLabel = "Core";
 							break;
 						default:

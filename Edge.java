@@ -34,7 +34,6 @@ public class Edge extends Cublet {
 	}
 	
 
-
 	// Additional methods
 
 	/**

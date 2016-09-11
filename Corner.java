@@ -34,7 +34,6 @@ public class Corner extends Cublet {
 	}
 	
 
-
 	// Additional methods
 
 	/**
@@ -49,7 +48,7 @@ public class Corner extends Cublet {
 	 * Returns a new Corner representing this corner twiseted counter-clockwise
 	 */
 	public Corner twistCounterClockwise() {
-		int orientationCounterClockwise = (orientation - 1) % NUM_COLORS;
+		int orientationCounterClockwise = (orientation - 1 < 0) ? NUM_COLORS - 1 : orientation - 1;
 		return new Corner(solvedX, solvedY, solvedZ, orientationCounterClockwise);
 	}
 

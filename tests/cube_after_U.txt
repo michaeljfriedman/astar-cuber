@@ -1,0 +1,39 @@
+# This cube is in the state just after making a U turn from a solved cube. This means
+# all corners and edges remain oriented.
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# U side - corners
+	0	0	2		0	2	2		0
+	0	2	2		2	2	2		0
+	2	2	2		2	0	2		0
+	2	0	2		0	0	2		0
+
+# U side - edges
+	0	1	2		1	2	2		0
+	1	2	2		2	1	2		0
+	2	1	2		1	0	2		0
+	1	0	2		0	1	2		0
+
+# U side - center
+	1	1	2		1	1	2		0
+
+# Everything else
+	0	0	0		0	0	0		0
+	0	0	1		0	0	1		0
+	0	1	0		0	1	0		0
+	0	1	1		0	1	1		0
+	0	2	0		0	2	0		0
+	0	2	1		0	2	1		0
+	1	0	0		1	0	0		0
+	1	0	1		1	0	1		0
+	1	1	0		1	1	0		0
+	1	1	1		1	1	1		0
+	1	2	0		1	2	0		0
+	1	2	1		1	2	1		0
+	2	0	0		2	0	0		0
+	2	0	1		2	0	1		0
+	2	1	0		2	1	0		0
+	2	1	1		2	1	1		0
+	2	2	0		2	2	0		0
+	2	2	1		2	2	1		0

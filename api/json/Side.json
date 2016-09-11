@@ -111,9 +111,9 @@
 							"type": "Cublet[]"
 						}
 					],
-					"returnType": "Cublet[]",
+					"returnType": "void",
 					"access": "Private",
-					"description": "Returns a new array of Cublets representing the given array permuted one turn clockwise"
+					"description": "Permutes the given array so to represent a clockwise turn on those Cublets"
 				},
 
 				{
@@ -121,7 +121,7 @@
 					"arguments": [
 						{
 							"name": "cublets",
-							"type": "Cublets[]"
+							"type": "Cublet[]"
 						},
 
 						{
@@ -129,9 +129,9 @@
 							"type": "XCoordinate"
 						}
 					],
-					"returnType": "Cublet[]",
+					"returnType": "void",
 					"access": "Private",
-					"description": "Returns a new array of Cublets that orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
+					"description": "Orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
 				},
 
 				{
@@ -139,7 +139,7 @@
 					"arguments": [
 						{
 							"name": "cublets",
-							"type": "Cublets[]"
+							"type": "Cublet[]"
 						},
 
 						{
@@ -147,9 +147,9 @@
 							"type": "YCoordinate"
 						}
 					],
-					"returnType": "Cublet[]",
+					"returnType": "void",
 					"access": "Private",
-					"description": "Returns a new array of Cublets that orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
+					"description": "Orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
 				},
 
 				{
@@ -157,7 +157,7 @@
 					"arguments": [
 						{
 							"name": "cublets",
-							"type": "Cublets[]"
+							"type": "Cublet[]"
 						},
 
 						{
@@ -165,9 +165,9 @@
 							"type": "ZCoordinate"
 						}
 					],
-					"returnType": "Cublet[]",
+					"returnType": "void",
 					"access": "Private",
-					"description": "Returns a new array of Cublets that orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
+					"description": "Orients the Corners and Edges of the given array appropriately when making a clockwise turn on the specified side. Assumes the corners are in their original locations (before the turn)"
 				}
 
 			]

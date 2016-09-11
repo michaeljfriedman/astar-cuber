@@ -1,0 +1,39 @@
+# This cube is in the state just after making a L turn from a solved cube. This means
+# all corners have been unoriented, and edges remain oriented.
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# L side - corners
+	0	0	2		2	0	2		1
+	2	0	2		2	0	0		2
+	2	0	0		0	0	0		1
+	0	0	0		0	0	2		2
+
+# L side - edges
+	1	0	2		2	0	1		0
+	2	0	1		1	0	0		0
+	1	0	0		0	0	1		0
+	0	0	1		1	0	2		0
+
+# L side - center
+	1	0	1		1	0	1		0
+
+# Everything else
+	0	1	0		0	1	0		0
+	0	1	1		0	1	1		0
+	0	1	2		0	1	2		0
+	0	2	0		0	2	0		0
+	0	2	1		0	2	1		0
+	0	2	2		0	2	2		0
+	1	1	0		1	1	0		0
+	1	1	1		1	1	1		0
+	1	1	2		1	1	2		0
+	1	2	0		1	2	0		0
+	1	2	1		1	2	1		0
+	1	2	2		1	2	2		0
+	2	1	0		2	1	0		0
+	2	1	1		2	1	1		0
+	2	1	2		2	1	2		0
+	2	2	0		2	2	0		0
+	2	2	1		2	2	1		0
+	2	2	2		2	2	2		0
