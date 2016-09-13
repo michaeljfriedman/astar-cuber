@@ -71,106 +71,42 @@ public class TestCubeTurns {
 	//-----------------------------------------
 
 	// x/y axes
-
-	@Ignore("Test not implemented yet") public void testBL() {
-
+	@Test
+	public void testXthenY() {
+		Cube cubeAfterFL = new Cube("tests/cube_after_FL.txt");
+		Cube testCube = solved.turnClockwise(Cube.F).turnClockwise(Cube.L);
+		assertTrue("The test cube after F, L should equal the preset cube",
+			testCube.equals(cubeAfterFL));
 	}
 
-	@Ignore("Test not implemented yet") public void testLB() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testBR() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testRB() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testFL() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testLF() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testFR() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testRF() {
-
-	}
+	@Ignore("Test not implemented")
+	public void testYthenX() {}
 
 	// y/z axes
 
-	@Ignore("Test not implemented yet") public void testLD() {
-
+	@Test
+	public void testYthenZ() {
+		Cube cubeAfterRU = new Cube("tests/cube_after_RU.txt");
+		Cube testCube = solved.turnClockwise(Cube.R).turnClockwise(Cube.U);
+		assertTrue("The test cube after R, U should equal the preset cube",
+			testCube.equals(cubeAfterRU));
 	}
 
-	@Ignore("Test not implemented yet") public void testDL() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testLU() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testUL() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testRD() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testDR() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testRU() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testUR() {
-
-	}
+	@Ignore("Test not implemented")
+	public void testZthenY() {}
 
 	// x/z axes
 
-	@Ignore("Test not implemented yet") public void testFD() {
-
+	@Test
+	public void testXthenZ() {
+		Cube cubeAfterBD = new Cube("tests/cube_after_BD.txt");
+		Cube testCube = solved.turnClockwise(Cube.B).turnClockwise(Cube.D);
+		assertTrue("The test cube after B, D should equal the preset cube",
+			testCube.equals(cubeAfterBD));
 	}
 
-	@Ignore("Test not implemented yet") public void testDF() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testFU() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testUF() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testBD() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testDB() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testBU() {
-
-	}
-
-	@Ignore("Test not implemented yet") public void testUB() {
-
-	}
+	@Ignore("Test not implemented")
+	public void testZthenX() {}
 
 
 	//-----------------------------------------
@@ -204,9 +140,14 @@ public class TestCubeTurns {
 	// Check solved after making moves
 	//---------------------------------
 
-	@Ignore("Test not implemented yet") public void testNearlySolvedCubesBecomeSolved() {
-		// construct some nearly solved cubes from files, make the moves to solve 
-		// them, and test that they pass isSolved()
+	@Test
+	public void testNearlySolvedCubesBecomeSolved1() {
+		Cube cubeAfterRU = new Cube("tests/cube_after_RU.txt");
+		Cube testCube = cubeAfterRU
+			.turnClockwise(Cube.U).turnClockwise(Cube.U).turnClockwise(Cube.U)
+			.turnClockwise(Cube.R).turnClockwise(Cube.R).turnClockwise(Cube.R);
+		assertTrue("After moves U', R' the test cube should be solved",
+			testCube.isSolved());
 	}
 
 	@Test
@@ -240,9 +181,19 @@ public class TestCubeTurns {
 
 	@Test
 	public void testUnsolvedCubeBecomesMoreUnsolved() {
-		// construct some unsolved cubes from files, make some moves, and
-		// test that they still fail isSolved()
-		
+		// construct an unsolved cube from a file, make some arbitrary moves, and test
+		// that it fails isSolved()
+		Cube cubeAfterRU = new Cube("tests/cube_after_RU.txt");
+		Cube testCube = cubeAfterRU
+			.turnClockwise(Cube.B)
+			.turnClockwise(Cube.B)
+			.turnClockwise(Cube.L)
+			.turnClockwise(Cube.D)
+			.turnClockwise(Cube.R)
+			.turnClockwise(Cube.F)
+			.turnClockwise(Cube.U);
+		assertFalse("Test cube should still be unsolved after R, U, B, B, L, D, R, F, U",
+			testCube.isSolved());
 	}
 
 }

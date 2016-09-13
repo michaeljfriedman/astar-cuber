@@ -1,0 +1,44 @@
+# This cube is in the state just after performing B, D from a solved cube
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# B center
+	0	1	1		0	1	1		0	
+
+# D center
+	1	1	0		1	1	0		0
+
+# B side corners ending at C1 and C2
+	0	2	2		0	0	2		1
+	0	2	0		0	2	2		2
+
+# D side corners ending at C1-C4
+	0	0	2		2	0	0		2
+	2	0	0		2	2	0		0
+	2	2	0		0	2	0		0
+	0	0	0		0	0	0		1
+
+# B side edges ending at E1, E2, and E4
+	0	2	1		0	1	2		1
+	0	1	2		0	0	1		1
+	0	1	0		0	2	1		1
+
+# D side edges ending at E1-E4
+	1	0	0		2	1	0		0
+	2	1	0		1	2	0		0
+	1	2	0		0	1	0		0
+	0	0	1		1	0	0		1
+
+# Everything else
+	1	0	1		1	0	1		0
+	1	0	2		1	0	2		0
+	1	1	1		1	1	1		0
+	1	1	2		1	1	2		0
+	1	2	1		1	2	1		0
+	1	2	2		1	2	2		0
+	2	0	1		2	0	1		0
+	2	0	2		2	0	2		0
+	2	1	1		2	1	1		0
+	2	1	2		2	1	2		0
+	2	2	1		2	2	1		0
+	2	2	2		2	2	2		0

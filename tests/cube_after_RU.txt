@@ -1,0 +1,44 @@
+# This cube is in the state just after performing R, U from a solved cube
+
+#	x0	y0	z0		x 	y 	z 		orientation
+
+# R center
+	1	2	1		1	2	1		0
+
+# U center
+	1	1	2		1	1	2		0
+
+# R side corners ending at C3 and C4
+	0	2	2		0	2	0		2
+	0	2	0		2	2	0		1
+
+# U side corners ending at C1-C4
+	2	0	2		0	0	2		0
+	0	0	2		0	2	2		0
+	2	2	2		2	2	2		1
+	2	2	0		2	0	2		2
+
+# R side edges ending at E2-E4
+	1	2	2		0	2	1		0
+	0	2	1		1	2	0		0
+	1	2	0		2	2	1		0
+
+# U side edges ending at E1-E4
+	1	0	2		0	1	2		0
+	0	1	2		1	2	2		0
+	2	2	1		2	1	2		0
+	2	1	2		1	0	2		0
+
+# Everything else
+	0	0	0		0	0	0		0
+	0	0	1		0	0	1		0
+	0	1	0		0	1	0		0
+	0	1	1		0	1	1		0
+	1	0	0		1	0	0		0
+	1	0	1		1	0	1		0
+	1	1	0		1	1	0		0
+	1	1	1		1	1	1		0
+	2	0	0		2	0	0		0
+	2	0	1		2	0	1		0
+	2	1	0		2	1	0		0
+	2	1	1		2	1	1		0

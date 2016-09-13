@@ -116,17 +116,17 @@ public class TestCube {
 	}
 
 	@Test
-	public void testUnsolvedAfterConstructingSolvedByU() {
+	public void testUnsolvedAfterConstructingCubeAfterU() {
 		// construct an unsolved cube and test that it fails isSolved()
-		Cube cubeAfterUi = new Cube("tests/cube_after_Ui.txt");
-		assertFalse(cubeAfterUi.isSolved());
+		Cube cubeAfterU = new Cube("tests/cube_after_U.txt");
+		assertFalse(cubeAfterU.isSolved());
 	}
 
 	@Test
-	public void testUnsolvedAfterConstructingSolvedByRU() {
+	public void testUnsolvedAfterConstructingCubeAfterRU() {
 		// construct an unsolved cube and test that it fails isSolved()
-		Cube cubeAfterUiRi = new Cube("tests/cube_after_UiRi.txt");
-		assertFalse(cubeAfterUiRi.isSolved());
+		Cube cubeAfterRU = new Cube("tests/cube_after_RU.txt");
+		assertFalse(cubeAfterRU.isSolved());
 	}
 
 
