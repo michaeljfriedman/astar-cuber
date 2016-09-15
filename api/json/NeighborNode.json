@@ -1,0 +1,109 @@
+{
+	"name": "NeighborNode implements Comparable(NeighborNode)",
+
+	"description": "A helper object that contains a reference to a NeighborContainer (a container for a cube at one moment during the solve), and a reference to the NeighborNode holding the preceding NeighborContainer",
+
+	"constants": [
+
+		
+
+	],
+
+	"instanceVariables": [
+
+		{
+			"name": "neighborContainer",
+			"type": "NeighborContainer",
+			"description": "The NeighborContainer holding the current state of the Cube at one moment during the solve"
+		},
+
+		{
+			"name": "prev",
+			"type": "NeighborNode",
+			"description": "The NeighborNode holding the preceding NeighborContainer (differs by one turn from the one in the NeighborContainer)"
+		}
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "NeighborNode()",
+					"arguments": [
+						{
+							"name": "neighborContainer",
+							"type": "NeighborContainer"
+						},
+
+						{
+							"name": "prev",
+							"type": "NeighborNode"
+						}
+					],
+					"returnType": "NeighborNode",
+					"access": "Private",
+					"description": "Constructs a NeighborNode"
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				{
+					"name": "compareTo()",
+					"arguments": [
+						{
+							"name": "that",
+							"type": "NeighborNode"
+						}
+					],
+					"returnType": "int",
+					"access": "Public",
+					"description": "Using the DistanceHeuristic of the CubeSolver (outer class) as a definition of distance, returns greater than 0 if the cube represented by this NeighborNode has greater distance than that of the other NeighborNode, less than 0 if it has smaller distance, and 0 if they have the same distance"
+				}
+				
+			]
+
+		}
+
+	]
+
+}

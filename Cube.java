@@ -9,13 +9,13 @@
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.RedBlackBST;
+import java.util.HashMap;
 
 public class Cube {
 
-	// Constants
+	// Constants and static functions
 
 	public static final int GRID_SIZE = 3;		// the grid size of the cube
-
 
 	public static final XCoordinate B = new XCoordinate(0);		// back side
 	public static final XCoordinate F = new XCoordinate(2);		// front side
@@ -24,6 +24,58 @@ public class Cube {
 	public static final ZCoordinate D = new ZCoordinate(0);		// down side
 	public static final ZCoordinate U = new ZCoordinate(2);		// up side
 
+	private static final HashMap<Coordinate, String> clockwiseTurnToString = buildClockwiseTurnMap();
+	private static final HashMap<Coordinate, String> counterClockwiseTurnToString = 
+		buildCounterClockwiseTurnMap();
+
+
+	/**
+	 * Returns the a mapping from Coordinates representing a side to the string
+	 * representation of that side (for clockwise turns)
+	 */
+	private static HashMap<Coordinate, String> buildClockwiseTurnMap() {
+		HashMap<Coordinate, String> map = new HashMap<Coordinate, String>();
+		map.put(B, "B");
+		map.put(F, "F");
+		map.put(L, "L");
+		map.put(R, "R");
+		map.put(D, "D");
+		map.put(U, "U");
+		return map;
+	}
+
+	/**
+	 * Returns the a mapping from Coordinates representing a side to the string
+	 * representation of that side (for clockwise turns)
+	 */
+	private static HashMap<Coordinate, String> buildCounterClockwiseTurnMap() {
+		HashMap<Coordinate, String> map = new HashMap<Coordinate, String>();
+		map.put(B, "B'");
+		map.put(F, "F'");
+		map.put(L, "L'");
+		map.put(R, "R'");
+		map.put(D, "D'");
+		map.put(U, "U'");
+		return map;
+	}
+
+	/**
+	 * Returns the string representation of a clockwise turn on the Coordinate's 
+	 * corresponding side
+	 */
+	public static String clockwiseTurnToString(Coordinate side) {
+		return clockwiseTurnToString.get(side);
+	}
+
+	/**
+	 * Returns the string representation of a counter-clockwise turn on the 
+	 * Coordinate's corresponding side
+	 */
+	public static String counterClockwiseTurnToString(Coordinate side) {
+		return counterClockwiseTurnToString.get(side);
+	}
+	
+	
 	// The default value of the unspecified Coordinate of an edge's location on
 	// the cube
 	public static final Coordinate EDGE = new Coordinate(1);
@@ -296,6 +348,42 @@ public class Cube {
 	public Cube turnClockwise(ZCoordinate plane) {
 		return Side.turnClockwise(plane, this);
 	}
+
+	// TODO: Optimize turnCounterClockwise() methods for better efficiency, and write tests for them one them no longer depend on turnClockwise()
+
+	/**
+	 * Returns a new Cube that is the result of turning the side in the given plane
+	 * once counter-clockwise 
+	 */
+	public Cube turnCounterClockwise(XCoordinate plane) {
+		return this
+			.turnClockwise(plane)
+			.turnClockwise(plane)
+			.turnClockwise(plane);
+	}
+
+	/**
+	 * Returns a new Cube that is the result of turning the side in the given plane
+	 * once counter-clockwise 
+	 */
+	public Cube turnCounterClockwise(YCoordinate plane) {
+		return this
+			.turnClockwise(plane)
+			.turnClockwise(plane)
+			.turnClockwise(plane);
+	}
+
+	/**
+	 * Returns a new Cube that is the result of turning the side in the given plane
+	 * once counter-clockwise 
+	 */
+	public Cube turnCounterClockwise(ZCoordinate plane) {
+		return this
+			.turnClockwise(plane)
+			.turnClockwise(plane)
+			.turnClockwise(plane);
+	}
+	
 
 	/**
 	 * Return whether this Cube is the same as that Cube

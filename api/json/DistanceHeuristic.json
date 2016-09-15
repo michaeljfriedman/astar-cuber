@@ -1,0 +1,83 @@
+{
+	"name": "DistanceHeuristic",
+
+	"description": "DistanceHeuristic is an interface for an object that defines a measure of how close a cube is to being solved. In more mathematical terms, it defines a distance function f, which computes the distance from any cube C to the solved cube S. It must satisfy the properties that (1) f(S) = 0 and (2) [ limit of f(C) as C -> S ] = 0. (Note that, in property (2) what it means for C to 'approach' S depends on the distance function itself.)",
+
+	"constants": [
+
+		
+
+	],
+
+	"instanceVariables": [
+
+		
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				{
+					"name": "distance()",
+					"arguments": [
+						{
+							"name": "cube",
+							"type": "Cube"
+						}
+					],
+					"returnType": "int",
+					"access": "Public",
+					"description": "Returns the distance from the given Cube to a solved cube"
+				}
+				
+			]
+
+		}
+
+	]
+
+}

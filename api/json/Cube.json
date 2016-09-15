@@ -243,7 +243,32 @@
 			"category": "Static",
 			"methods": [
 
-				
+				{
+					"name": "clockwiseTurnToString()",
+					"arguments": [
+						{
+							"name": "side",
+							"type": "Coordinate"
+						}
+					],
+					"returnType": "String",
+					"access": "Public",
+					"description": "Returns the string representation of a clockwise turn on the Coordinate's corresponding side"
+				},
+
+				{
+					"name": "counterClockwiseTurnToString()",
+					"arguments": [
+						{
+							"name": "side",
+							"type": "Coordinate"
+						}
+					],
+					"returnType": "String",
+					"access": "Public",
+					"description": "Returns the string representation of a counter-clockwise turn on the Coordinate's corresponding side"
+				}
+
 				
 			]
 
@@ -298,6 +323,45 @@
 					"returnType": "Cube",
 					"access": "Public",
 					"description": "Returns a new Cube that is the result of turning the side in the given plane once clockwise"
+				},
+
+				{
+					"name": "turnCounterClockwise()",
+					"arguments": [
+						{
+							"name": "plane",
+							"type": "XCoordinate"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube that is the result of turning the side in the given plane once counter-clockwise"
+				},
+
+				{
+					"name": "turnCounterClockwise()",
+					"arguments": [
+						{
+							"name": "plane",
+							"type": "YCoordinate"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube that is the result of turning the side in the given plane once counter-clockwise"
+				},
+
+				{
+					"name": "turnCounterClockwise()",
+					"arguments": [
+						{
+							"name": "plane",
+							"type": "ZCoordinate"
+						}
+					],
+					"returnType": "Cube",
+					"access": "Public",
+					"description": "Returns a new Cube that is the result of turning the side in the given plane once counter-clockwise"
 				},
 
 				{

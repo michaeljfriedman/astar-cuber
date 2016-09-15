@@ -1,0 +1,98 @@
+{
+	"name": "NeighborContainer",
+
+	"description": "A container with a reference to a neighbor Cube and the turn made to get to that neighbor from the preceding Cube.",
+
+	"constants": [
+
+		
+
+	],
+
+	"instanceVariables": [
+
+		{
+			"name": "neighbor",
+			"type": "Cube",
+			"description": "The neighbor Cube"
+		},
+
+		{
+			"name": "turn",
+			"type": "String",
+			"description": "The turn made to get to the neighbor Cube from the preceding Cube"
+		}
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "NeighborContainer()",
+					"arguments": [
+						{
+							"name": "neighbor",
+							"type": "Cube"
+						},
+
+						{
+							"name": "turn",
+							"type": "String"
+						}
+					],
+					"returnType": "NeighborContainer",
+					"access": "Private",
+					"description": "Constructs a NeighborContainer"
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				
+				
+			]
+
+		}
+
+	]
+
+}

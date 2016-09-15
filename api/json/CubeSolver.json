@@ -1,0 +1,127 @@
+{
+	"name": "CubeSolver",
+
+	"description": "A CubeSolver is an object that solves the Rubik's Cube using the A* algorithm. It is based on a distance heuristic that is implemented in a separate interface (see DistanceHeuristic).",
+
+	"constants": [
+
+		
+
+	],
+
+	"instanceVariables": [
+
+		{
+			"name": "neighborNode",
+			"type": "NeighborNode",
+			"description": "The NeighborNode holding the current state of the Cube being solved"
+		},
+
+		{
+			"name": "distanceHeuristic",
+			"type": "DistanceHeuristic",
+			"description": "The DistanceHeuristic providing the definition of distance on cubes for this solver"
+		},
+
+		{
+			"name": "neighborsPQ",
+			"type": "MinPQ(NeighborNode)",
+			"description": "A min-priority-queue of NeighborNodes that uses a DistanceHeuristic to compare priority of the Cubes contained in the NeighborNodes"
+		},
+
+		{
+			"name": "solveAlgorithm",
+			"type": "String",
+			"description": "The string representation of the algorithm to solve the cube, as a comma-separated list of turns"
+		}
+
+	],
+
+	"methodCategories": [
+
+		{
+			"category": "Constructors",
+			"methods": [
+
+				{
+					"name": "CubeSolver()",
+					"arguments": [
+						{
+							"name": "cube",
+							"type": "Cube"
+						},
+
+						{
+							"name": "distanceHeuristic",
+							"type": "DistanceHeuristic"
+						}
+					],
+					"returnType": "CubeSolver",
+					"access": "Public",
+					"description": "Initializes a CubeSolver, and solves the given Cube using the given DistanceHeuristic for the A* algorithm. Throws an error if the Cube is invalid or not solvable. Note that there is (currently) no way to determine if the DistanceHeuristic provided is sufficient to solve the cube, and if it isn't, the program may never terminate."
+				}
+
+			]
+
+		},
+
+		{
+			"category": "Getters",
+			"methods": [
+
+				{
+					"name": "getSolveAlgorithm()",
+					"arguments": [],
+					"returnType": "String",
+					"access": "Public",
+					"description": "Returns the algorithm for solving the cube as a comma-separated list of moves in standard cube notation"
+				}
+				
+			]
+
+		},
+
+		{
+			"category": "Setters",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Static",
+			"methods": [
+
+				
+				
+			]
+
+		},
+
+		{
+			"category": "Other",
+			"methods": [
+
+				{
+					"name": "main()",
+					"arguments": [
+						{
+							"name": "args",
+							"type": "String[]"
+						}
+					],
+					"returnType": "void",
+					"access": "Public",
+					"description": "A client program that solves the cube from the filename and the name of the distanceHeuristic passed as arguments"
+				}
+				
+			]
+
+		}
+
+	]
+
+}
